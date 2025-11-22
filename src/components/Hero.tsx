@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 import heroMinimal from "@/assets/hero-minimal.jpg";
 import { useState } from "react";
+import { TextScramble } from "@/components/ui/text-scramble";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -23,9 +24,14 @@ const Hero = () => {
               <p className="text-sm uppercase tracking-widest text-muted-foreground font-light">
                 Software Engineer
               </p>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tighter">
-                Your Name
-              </h1>
+              <TextScramble 
+                as="h1" 
+                className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tighter"
+                duration={1.2}
+                speed={0.05}
+              >
+                Karthik Adharsh
+              </TextScramble>
               <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl">
                 Year 4 Computer Science Student crafting elegant digital experiences
               </p>
