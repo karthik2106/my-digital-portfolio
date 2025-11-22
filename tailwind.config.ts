@@ -86,9 +86,9 @@ export default {
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		fontFamily: {
-  			sans: [
-  				'Source Sans Pro',
-  				'ui-sans-serif',
+  		sans: [
+  			'Inter',
+  			'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
   				'BlinkMacSystemFont',

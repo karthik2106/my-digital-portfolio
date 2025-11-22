@@ -1,23 +1,22 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const skillCategories = [
   {
-    title: "Programming Languages",
+    title: "Languages",
     skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "SQL"],
   },
   {
-    title: "Web Development",
-    skills: ["React", "Node.js", "HTML/CSS", "Tailwind CSS", "Next.js", "Express"],
+    title: "Frontend",
+    skills: ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
   },
   {
-    title: "Tools & Technologies",
-    skills: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "REST APIs"],
+    title: "Backend",
+    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"],
   },
   {
-    title: "Soft Skills",
-    skills: ["Problem Solving", "Team Collaboration", "Communication", "Agile", "Critical Thinking"],
+    title: "Tools",
+    skills: ["Git", "Docker", "AWS", "Vercel"],
   },
 ];
 
@@ -25,36 +24,46 @@ const Skills = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="skills" className="py-20 bg-muted/50">
+    <section id="skills" className="py-32 bg-muted/30">
       <div 
         ref={ref}
         className={`container px-4 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-4xl font-bold text-center mb-4">Skills</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          A comprehensive overview of my technical abilities and professional competencies
-        </p>
-        
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {skillCategories.map((category) => (
-            <Card key={category.title} className="border-2 hover:border-primary/50 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
-                <CardDescription>Core competencies and expertise</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Expertise</p>
+            <h2 className="text-5xl md:text-6xl font-light tracking-tighter mb-6">Skills</h2>
+            <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
+              Technical capabilities and tools I work with
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skillCategories.map((category, index) => (
+              <div
+                key={category.title}
+                className={`transition-all duration-700 delay-${index * 100} ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+              >
+                <h3 className="text-xl font-light tracking-tight mb-6">
+                  {category.title}
+                </h3>
+                <div className="space-y-3">
                   {category.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-sm">
+                    <div
+                      key={skill}
+                      className="text-sm text-muted-foreground font-light py-2 px-4 bg-background/50 rounded-full border border-border/50 hover:border-primary/50 transition-all duration-300"
+                    >
                       {skill}
-                    </Badge>
+                    </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
