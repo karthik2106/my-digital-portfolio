@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const experiences = [
   {
@@ -35,9 +36,16 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="experience" className="py-20 bg-muted/50">
-      <div className="container px-4">
+      <div 
+        ref={ref}
+        className={`container px-4 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <h2 className="text-4xl font-bold text-center mb-4">Work Experience</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Professional experience and contributions that shaped my technical journey
