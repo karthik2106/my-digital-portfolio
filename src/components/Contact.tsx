@@ -26,17 +26,17 @@ const Contact = () => {
             <Button 
               size="lg" 
               className="group rounded-full px-8 font-light text-base"
-              onClick={() => window.location.href = 'mailto:your.email@example.com'}
+              onClick={() => window.location.href = 'mailto:karthikadharsh.work@gmail.com'}
             >
               <Mail className="h-4 w-4 mr-2" />
-              your.email@example.com
+              karthikadharsh.work@gmail.com
               <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
           
           <div className="flex gap-8 justify-center pt-8 border-t border-border/50">
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/karthik2106" 
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -45,7 +45,7 @@ const Contact = () => {
               <span className="text-xs font-light">GitHub</span>
             </a>
             <a 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://www.linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230" 
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

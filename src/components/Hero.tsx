@@ -45,6 +45,7 @@ const Hero = () => {
                 style={{
                   transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                 }}
+                onClick={() => window.location.href = 'mailto:karthikadharsh.work@gmail.com'}
               >
                 <Mail className="h-4 w-4 mr-2" />
                 Get in touch
@@ -55,6 +56,7 @@ const Hero = () => {
                 variant="ghost" 
                 size="lg" 
                 className="rounded-full px-6 font-light hover:bg-muted"
+                onClick={() => window.open('https://github.com/karthik2106', '_blank')}
               >
                 <Github className="h-4 w-4 mr-2" />
                 View work
@@ -63,7 +65,7 @@ const Hero = () => {
             
             <div className="flex gap-6 justify-center lg:justify-start pt-8">
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/karthik2106" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -71,12 +73,18 @@ const Hero = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com/in/yourprofile" 
+                href="https://www.linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="mailto:karthikadharsh.work@gmail.com"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
