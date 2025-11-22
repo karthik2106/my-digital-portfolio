@@ -1,6 +1,7 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import resumePreview from "@/assets/resume-preview.jpg";
 
 const Resume = () => {
   return (
@@ -25,10 +26,10 @@ const Resume = () => {
           </div>
         }
       >
-        <iframe
-          src="/resume.pdf"
-          className="w-full h-full rounded-lg"
-          title="Resume"
+        <img
+          src={resumePreview}
+          alt="Karthik Adharsh Resume - Software Engineer with experience in AI, Full-Stack Development, and Machine Learning"
+          className="w-full h-full object-contain rounded-lg"
         />
       </ContainerScroll>
     </section>
