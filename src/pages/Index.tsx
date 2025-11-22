@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <Skills />
       <Projects />
       <Experience />
+      <Resume />
       <Contact />
       
       <footer className="py-12 border-t border-border/50">
