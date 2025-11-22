@@ -15,10 +15,10 @@ const Index = () => {
       <Experience />
       <Contact />
       
-      <footer className="bg-muted py-8 text-center">
-        <div className="container px-4">
-          <p className="text-muted-foreground">
-            © 2024 Your Name. Built with passion and code.
+      <footer className="py-12 border-t border-border/50">
+        <div className="container px-4 text-center">
+          <p className="text-sm text-muted-foreground font-light">
+            © 2024 Your Name. Designed with care.
           </p>
         </div>
       </footer>

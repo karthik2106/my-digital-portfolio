@@ -1,72 +1,60 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-32 bg-background">
       <div 
         ref={ref}
         className={`container px-4 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-4xl font-bold text-center mb-4">Get In Touch</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to new opportunities and collaborations. Feel free to reach out!
-        </p>
-        
-        <Card className="max-w-2xl mx-auto border-2">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Let's Connect</CardTitle>
-            <CardDescription>
-              Choose your preferred way to contact me
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Connect</p>
+          <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-6">
+            Let's work together
+          </h2>
+          <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
-              variant="outline" 
               size="lg" 
-              className="w-full justify-start gap-4 h-auto py-4"
+              className="group rounded-full px-8 font-light text-base"
               onClick={() => window.location.href = 'mailto:your.email@example.com'}
             >
-              <Mail className="h-6 w-6 text-primary" />
-              <div className="text-left">
-                <div className="font-semibold">Email</div>
-                <div className="text-sm text-muted-foreground">your.email@example.com</div>
-              </div>
+              <Mail className="h-4 w-4 mr-2" />
+              your.email@example.com
+              <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full justify-start gap-4 h-auto py-4"
-              onClick={() => window.open('https://linkedin.com/in/yourprofile', '_blank')}
+          </div>
+          
+          <div className="flex gap-8 justify-center pt-8 border-t border-border/50">
+            <a 
+              href="https://github.com/yourusername" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-6 w-6 text-primary" />
-              <div className="text-left">
-                <div className="font-semibold">LinkedIn</div>
-                <div className="text-sm text-muted-foreground">Connect with me professionally</div>
-              </div>
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full justify-start gap-4 h-auto py-4"
-              onClick={() => window.open('https://github.com/yourusername', '_blank')}
+              <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              <span className="text-xs font-light">GitHub</span>
+            </a>
+            <a 
+              href="https://linkedin.com/in/yourprofile" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Github className="h-6 w-6 text-primary" />
-              <div className="text-left">
-                <div className="font-semibold">GitHub</div>
-                <div className="text-sm text-muted-foreground">Check out my code repositories</div>
-              </div>
-            </Button>
-          </CardContent>
-        </Card>
+              <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              <span className="text-xs font-light">LinkedIn</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
