@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
@@ -28,9 +29,16 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="projects" className="py-20">
-      <div className="container px-4">
+      <div 
+        ref={ref}
+        className={`container px-4 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <h2 className="text-4xl font-bold text-center mb-4">Projects</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           A selection of my recent work and personal projects showcasing my technical skills
