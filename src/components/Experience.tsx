@@ -6,7 +6,7 @@ const experienceData = [
     content: (
       <div>
         <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          ✅ GovTech — Software Engineer Intern
+          GovTech — Software Engineer Intern
         </p>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           Jan 2026 – Jul 2026
@@ -22,7 +22,7 @@ const experienceData = [
     content: (
       <div>
         <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          ✅ HTX — AI Computer Vision Engineer Intern
+          HTX — AI Computer Vision Engineer Intern
         </p>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           Jan 2025 – Jun 2025
@@ -41,7 +41,7 @@ const experienceData = [
     content: (
       <div>
         <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          ✅ TVS Motor — Software Engineer Intern
+          TVS Motor — Software Engineer Intern
         </p>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           May 2024 – Aug 2024
