@@ -1,6 +1,11 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import resumePreview from "@/assets/resume-preview.jpg";
 
 const Resume = () => {
@@ -26,11 +31,24 @@ const Resume = () => {
           </div>
         }
       >
-        <img
-          src={resumePreview}
-          alt="Karthik Adharsh Resume - Software Engineer with experience in AI, Full-Stack Development, and Machine Learning"
-          className="w-full h-full object-contain rounded-lg"
-        />
+        <Dialog>
+          <DialogTrigger asChild>
+            <img
+              src={resumePreview}
+              alt="Karthik Adharsh Resume - Software Engineer with experience in AI, Full-Stack Development, and Machine Learning"
+              className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+            />
+          </DialogTrigger>
+          <DialogContent className="max-w-4xl w-full h-[90vh] p-0">
+            <div className="w-full h-full overflow-auto p-6">
+              <img
+                src={resumePreview}
+                alt="Karthik Adharsh Resume - Full Size"
+                className="w-full h-auto"
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
       </ContainerScroll>
     </section>
   );
