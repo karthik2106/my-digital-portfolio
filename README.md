@@ -1,5 +1,9 @@
 # Karthik Adharsh - Portfolio
 
+link:portfolio-karthikadharsh-21.vercel.app
+
+this is my portfolio website, but when i send others , how can i make it have a small preview and what is it about
+
 A modern, animated portfolio website showcasing my projects, skills, and experience as a Computer Engineering student at NTU.
 
 ## Technologies Used
