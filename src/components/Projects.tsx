@@ -49,7 +49,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 bg-muted/30">
+    <section id="projects" className="py-32">
       <div
         ref={ref}
         className={`container px-4 transition-all duration-1000 ${
