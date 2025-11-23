@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
-import heroMinimal from "@/assets/hero-minimal.jpg";
-import { useState } from "react";
+import profilePic from "@/assets/ProfilePic.jpeg";
+import { useState, useEffect, useRef } from "react";
 import { TextScramble } from "@/components/ui/text-scramble";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -14,9 +16,32 @@ const Hero = () => {
     setMousePosition({ x: x / 20, y: y / 20 });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTriggerAnimation((prev) => !prev);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <div className="container relative z-10 px-4 py-32">
+    <section ref={sectionRef} id="home" className="relative flex items-center justify-center overflow-hidden bg-background pt-32">
+      <div className="container relative z-10 px-4 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Left Content */}
           <div className="space-y-8 text-center lg:text-left animate-fade-in">
@@ -24,16 +49,17 @@ const Hero = () => {
               <p className="text-sm uppercase tracking-widest text-muted-foreground font-light">
                 Software Engineer
               </p>
-              <TextScramble 
-                as="h1" 
+              <TextScramble
+                as="h1"
                 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tighter"
                 duration={1.2}
                 speed={0.05}
+                trigger={triggerAnimation}
               >
                 Karthik Adharsh
               </TextScramble>
               <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl">
-                Year 4 Computer Science Student crafting elegant digital experiences
+                Year 4 Computer Engineering @ NTU
               </p>
             </div>
             
@@ -95,8 +121,8 @@ const Hero = () => {
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 rounded-full blur-3xl" />
                 <img
-                  src={heroMinimal}
-                  alt="Abstract design"
+                  src={profilePic}
+                  alt="Karthik Adharsh"
                   className="relative w-full h-full object-cover rounded-3xl shadow-2xl"
                 />
               </div>

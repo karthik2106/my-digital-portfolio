@@ -2,34 +2,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { useState } from "react";
-import project1 from "@/assets/project1.jpg";
+import studyZen from "@/assets/StudyZen_main.png";
 import project2 from "@/assets/project2.jpg";
 import project3 from "@/assets/project3.jpg";
 
 const projects = [
   {
-    title: "Project Name 1",
-    description: "A full-stack web application built with modern technologies. Clean architecture and intuitive user experience.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com/yourusername/project1",
-    demo: "https://project1-demo.com",
-    image: project1,
+    title: "StudyZen",
+    description: "StudyZen brings your timetable, deadlines, and tasks straight into your Chrome tab—no PDF opening, no hassle. With AI scheduling, to-do tracking, and reminders, it keeps your entire academic life organized in one glance.",
+    technologies: ["Chrome Extension", "AI", "JavaScript", "Scheduling"],
+    github: "https://github.com/karthik2106/StudyZen",
+    demo: "https://github.com/karthik2106/StudyZen",
+    image: studyZen,
   },
   {
-    title: "Project Name 2",
-    description: "Mobile-first e-commerce platform with seamless payment integration and real-time inventory management.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-    github: "https://github.com/yourusername/project2",
-    demo: "https://project2-demo.com",
+    title: "Coming Soon",
+    description: "Exciting new project in development. Stay tuned for updates on this upcoming addition to my portfolio.",
+    technologies: ["TBA"],
+    github: "#",
+    demo: "#",
     image: project2,
   },
   {
-    title: "Project Name 3",
-    description: "Machine learning project for intelligent image classification with high accuracy and performance.",
-    technologies: ["Python", "TensorFlow", "scikit-learn", "Flask"],
-    github: "https://github.com/yourusername/project3",
-    demo: "https://project3-demo.com",
+    title: "Coming Soon",
+    description: "Another innovative project currently in the works. Check back soon for more details.",
+    technologies: ["TBA"],
+    github: "#",
+    demo: "#",
     image: project3,
   },
 ];
@@ -38,9 +39,18 @@ const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
+  const projectsWords = [
+    {
+      text: "Selected",
+    },
+    {
+      text: "Projects",
+    },
+  ];
+
   return (
     <section id="projects" className="py-32 bg-muted/30">
-      <div 
+      <div
         ref={ref}
         className={`container px-4 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -49,7 +59,11 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Portfolio</p>
-            <h2 className="text-5xl md:text-6xl font-light tracking-tighter mb-6">Selected Work</h2>
+            <TypewriterEffect
+              words={projectsWords}
+              className="text-5xl md:text-6xl font-light tracking-tighter mb-6"
+              cursorClassName="bg-primary"
+            />
             <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
               A collection of projects that showcase technical excellence and creative problem-solving
             </p>

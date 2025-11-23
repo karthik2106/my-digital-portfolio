@@ -1,13 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
 
+  const contactWords = [
+    {
+      text: "Let's",
+    },
+    {
+      text: "work",
+    },
+    {
+      text: "together",
+    },
+  ];
+
   return (
-    <section id="contact" className="py-32 bg-background">
-      <div 
+    <section id="contact" className="pt-32 pb-16 bg-background">
+      <div
         ref={ref}
         className={`container px-4 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -15,9 +28,11 @@ const Contact = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Connect</p>
-          <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-6">
-            Let's work together
-          </h2>
+          <TypewriterEffect
+            words={contactWords}
+            className="text-5xl md:text-7xl font-light tracking-tighter mb-6"
+            cursorClassName="bg-primary"
+          />
           <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>

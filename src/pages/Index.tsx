@@ -11,10 +11,10 @@ const Index = () => {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Skills />
-      <Projects />
-      <Experience />
       <Resume />
+      <Experience />
+      <Projects />
+      <Skills />
       <Contact />
       
       <footer className="py-12 border-t border-border/50">

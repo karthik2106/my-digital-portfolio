@@ -6,17 +6,29 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import resumePreview from "@/assets/resume-preview.jpg";
 
 const Resume = () => {
+  const resumeWords = [
+    {
+      text: "My",
+    },
+    {
+      text: "Resume",
+    },
+  ];
+
   return (
     <section id="resume" className="relative bg-background">
       <ContainerScroll
         titleComponent={
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-foreground">
-              My Resume
-            </h2>
+            <TypewriterEffect
+              words={resumeWords}
+              className="text-4xl md:text-6xl font-light tracking-tighter"
+              cursorClassName="bg-primary"
+            />
             <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
               Software Engineer specializing in full-stack development with experience in React, Python, and cloud technologies
             </p>
