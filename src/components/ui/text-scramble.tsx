@@ -46,8 +46,8 @@ export function TextScramble({
       const progress = step / steps;
 
       for (let i = 0; i < text.length; i++) {
-        if (text[i] === ' ') {
-          scrambled += ' ';
+        if (text[i] === ' ' || text[i] === '\n') {
+          scrambled += text[i];
           continue;
         }
 
@@ -78,7 +78,7 @@ export function TextScramble({
   }, [trigger]);
 
   return (
-    <MotionComponent className={className} {...props}>
+    <MotionComponent className={className} style={{ whiteSpace: 'pre-line' }} {...props}>
       {displayText}
     </MotionComponent>
   );

@@ -7,7 +7,7 @@ import { TextScramble } from "@/components/ui/text-scramble";
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const hasAnimated = useRef(false);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -17,30 +17,15 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTriggerAnimation((prev) => !prev);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    // Trigger animation only once on mount
+    if (!hasAnimated.current) {
+      setTriggerAnimation(true);
+      hasAnimated.current = true;
     }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className="relative flex items-center justify-center overflow-hidden bg-background pt-32">
+    <section id="home" className="relative flex items-center justify-center overflow-hidden bg-background pt-32">
       <div className="container relative z-10 px-4 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Left Content */}
@@ -56,13 +41,13 @@ const Hero = () => {
                 speed={0.05}
                 trigger={triggerAnimation}
               >
-                Karthik Adharsh
+                {"Karthik\nAdharsh"}
               </TextScramble>
               <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl">
                 Year 4 Computer Engineering @ NTU
               </p>
             </div>
-            
+
             <div className="flex gap-3 justify-center lg:justify-start flex-wrap">
               <Button 
                 size="lg" 

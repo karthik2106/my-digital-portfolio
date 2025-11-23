@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+# Karthik Adharsh - Portfolio
 
-## Project info
+A modern, animated portfolio website showcasing my projects, skills, and experience as a Computer Engineering student at NTU.
 
-**URL**: https://lovable.dev/projects/3ba7e00f-555f-433f-965b-748844dda574
+## Technologies Used
 
-## How can I edit this code?
+This portfolio is built with modern web technologies and libraries:
 
-There are several ways of editing your application.
+### Core Stack
+- **React** - UI library for building interactive components
+- **TypeScript** - Type-safe JavaScript for better development experience
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework for responsive design
 
-**Use Lovable**
+### UI Components & Animations
+- **Framer Motion** - Production-ready animation library for smooth, professional animations
+  - Scroll-triggered animations
+  - Text scramble effects
+  - Typewriter animations
+  - Smooth transitions and transforms
+- **shadcn/ui** - High-quality, accessible UI components built with Radix UI
+- **Lucide React** - Beautiful icon library
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3ba7e00f-555f-433f-965b-748844dda574) and start prompting.
+### Key Features
+- **Text Scramble Effect** - Custom animation for the hero section name reveal
+- **Typewriter Effect** - Animated section headings that type out on scroll
+- **Scroll Animations** - Sections animate into view as you scroll
+- **Hover Effects** - Interactive hover states with gradient glows and transforms
+- **Responsive Design** - Fully responsive across all device sizes
+- **Dark Mode Support** - Built-in theme support
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd my-digital-portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```sh
+# Create an optimized production build
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview the production build locally
+npm run preview
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+src/
+├── components/        # React components
+│   ├── ui/           # Reusable UI components (text-scramble, typewriter, etc.)
+│   ├── Hero.tsx      # Landing section
+│   ├── Resume.tsx    # Resume section
+│   ├── Experience.tsx # Work experience
+│   ├── Projects.tsx  # Project showcase
+│   ├── Skills.tsx    # Technical skills
+│   └── Contact.tsx   # Contact section
+├── assets/           # Images and static assets
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions
+└── pages/            # Page components
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Customization
 
-## How can I deploy this project?
+To customize this portfolio for your own use:
 
-Simply open [Lovable](https://lovable.dev/projects/3ba7e00f-555f-433f-965b-748844dda574) and click on Share -> Publish.
+1. Update personal information in the components
+2. Replace images in the `src/assets` folder
+3. Modify the projects array in `Projects.tsx`
+4. Update skills in `Skills.tsx`
+5. Change color scheme in `tailwind.config.ts`
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+This project is open source and available for personal use.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Contact
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Karthik Adharsh - [karthikadharsh.work@gmail.com](mailto:karthikadharsh.work@gmail.com)
+
+GitHub: [github.com/karthik2106](https://github.com/karthik2106)
+
+LinkedIn: [linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230](https://www.linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230)
