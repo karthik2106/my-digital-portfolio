@@ -1,20 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import profilePic from "@/assets/ProfilePic.jpeg";
 import { useState, useEffect, useRef } from "react";
 import { TextScramble } from "@/components/ui/text-scramble";
+import GridHoverEffect from "@/components/ui/grid-hover-effect";
+import SwipeLettersButton from "@/components/ui/swipe-letters-button";
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const hasAnimated = useRef(false);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    setMousePosition({ x: x / 20, y: y / 20 });
-  };
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     // Trigger animation only once on mount
@@ -24,8 +19,28 @@ const Hero = () => {
     }
   }, []);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+
   return (
-    <section id="home" className="relative flex items-center justify-center overflow-hidden bg-background pt-32">
+    <section
+      id="home"
+      className="relative flex items-center justify-center overflow-hidden bg-background pt-32"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Grid Hover Effect Background */}
+      <div className="absolute inset-0 z-20 w-full h-full pointer-events-none">
+        <GridHoverEffect
+          gridSize={20}
+          maxOpacity={0.2}
+          duration={1.5}
+          hoverColors={["#10b981", "#10b981", "#10b981", "#10b981"]}
+          gap={1}
+          externalMousePosition={mousePosition}
+        />
+      </div>
+
       <div className="container relative z-10 px-4 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Left Content */}
@@ -48,24 +63,19 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex gap-3 justify-center lg:justify-start flex-wrap">
-              <Button 
-                size="lg" 
-                className="group relative overflow-hidden rounded-full px-8 font-light magnetic-hover"
-                onMouseMove={handleMouseMove}
-                style={{
-                  transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-                }}
+            <div className="flex gap-3 justify-center lg:justify-start flex-wrap relative z-30">
+              <SwipeLettersButton
+                label="Get in touch"
                 onClick={() => window.location.href = 'mailto:karthikadharsh.work@gmail.com'}
-              >
-                <Mail className="h-4 w-4 mr-2" />
-                Get in touch
-                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="lg" 
+                direction="top"
+                duration={300}
+                stagger={30}
+                icon={<Mail className="h-4 w-4" />}
+              />
+
+              <Button
+                variant="ghost"
+                size="lg"
                 className="rounded-full px-6 font-light hover:bg-muted"
                 onClick={() => window.open('https://github.com/karthik2106', '_blank')}
               >
@@ -73,25 +83,25 @@ const Hero = () => {
                 View work
               </Button>
             </div>
-            
-            <div className="flex gap-6 justify-center lg:justify-start pt-8">
-              <a 
-                href="https://github.com/karthik2106" 
+
+            <div className="flex gap-6 justify-center lg:justify-start pt-8 relative z-30">
+              <a
+                href="https://github.com/karthik2106"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230" 
+              <a
+                href="https://www.linkedin.com/in/karthik-adharsh-selvakumar-85ba5b230"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a 
+              <a
                 href="mailto:karthikadharsh.work@gmail.com"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >

@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { useState } from "react";
 import studyZen from "@/assets/StudyZen_main.png";
-import project2 from "@/assets/project2.jpg";
+import myDexMain from "@/assets/MYDEX_mainPage.png";
 import project3 from "@/assets/project3.jpg";
 
 const projects = [
@@ -14,16 +14,16 @@ const projects = [
     description: "StudyZen brings your timetable, deadlines, and tasks straight into your Chrome tab—no PDF opening, no hassle. With AI scheduling, to-do tracking, and reminders, it keeps your entire academic life organized in one glance.",
     technologies: ["Chrome Extension", "AI", "JavaScript", "Scheduling"],
     github: "https://github.com/karthik2106/StudyZen",
-    demo: "https://github.com/karthik2106/StudyZen",
+    demo: "https://chromewebstore.google.com/detail/lnifkfemnfpiimbajkdceblfljohbhff?utm_source=item-share-cb",
     image: studyZen,
   },
   {
-    title: "Coming Soon",
-    description: "Exciting new project in development. Stay tuned for updates on this upcoming addition to my portfolio.",
-    technologies: ["TBA"],
-    github: "#",
-    demo: "#",
-    image: project2,
+    title: "MY_DEX",
+    description: "A fully functional decentralized exchange with advanced order types including limit, market, FOK, and GTT orders. Features circular arbitrage detection, real-time order matching, and seamless MetaMask integration for a complete trading experience.",
+    technologies: ["Solidity", "React", "Blockchain", "MetaMask", "Smart Contracts"],
+    github: "https://github.com/karthik2106/DEX_blockchain",
+    demo: "https://dex-blockchain-ogcw.vercel.app/",
+    image: myDexMain,
   },
   {
     title: "Coming Soon",

@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import SwipeLettersButton from "@/components/ui/swipe-letters-button";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -38,15 +38,14 @@ const Contact = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button 
-              size="lg" 
-              className="group rounded-full px-8 font-light text-base"
+            <SwipeLettersButton
+              label="karthikadharsh.work@gmail.com"
               onClick={() => window.location.href = 'mailto:karthikadharsh.work@gmail.com'}
-            >
-              <Mail className="h-4 w-4 mr-2" />
-              karthikadharsh.work@gmail.com
-              <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              direction="top"
+              duration={300}
+              stagger={30}
+              icon={<Mail className="h-4 w-4" />}
+            />
           </div>
           
           <div className="flex gap-8 justify-center pt-8 border-t border-border/50">

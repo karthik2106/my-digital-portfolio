@@ -3,11 +3,19 @@ import { Timeline } from "@/components/ui/timeline";
 const experienceData = [
   {
     title: "2026",
+    logo: "/govtech-logo.png",
     content: (
       <div>
-        <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          GovTech — Software Engineer Intern
-        </p>
+        <div className="flex items-center gap-3 mb-2">
+          <img
+            src="/govtech-logo.png"
+            alt="GovTech logo"
+            className="h-32 w-32 object-contain"
+          />
+          <p className="text-foreground text-sm md:text-base font-semibold">
+            GovTech — Software Engineer Intern
+          </p>
+        </div>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           Jan 2026 – Jul 2026
         </p>
@@ -19,11 +27,19 @@ const experienceData = [
   },
   {
     title: "2025",
+    logo: "/htx-logo.png",
     content: (
       <div>
-        <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          HTX — AI Computer Vision Engineer Intern
-        </p>
+        <div className="flex items-center gap-3 mb-2">
+          <img
+            src="/htx-logo.png"
+            alt="HTX logo"
+            className="h-24 w-24 object-contain"
+          />
+          <p className="text-foreground text-sm md:text-base font-semibold">
+            HTX — AI Computer Vision Engineer Intern
+          </p>
+        </div>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           Jan 2025 – Jun 2025
         </p>
@@ -38,11 +54,19 @@ const experienceData = [
   },
   {
     title: "2024",
+    logo: "/tvs-logo.svg",
     content: (
       <div>
-        <p className="text-foreground text-sm md:text-base font-semibold mb-2">
-          TVS Motor — Software Engineer Intern
-        </p>
+        <div className="flex items-center gap-3 mb-2">
+          <img
+            src="/tvs-logo.svg"
+            alt="TVS Motor logo"
+            className="h-24 w-24 object-contain"
+          />
+          <p className="text-foreground text-sm md:text-base font-semibold">
+            TVS Motor — Software Engineer Intern
+          </p>
+        </div>
         <p className="text-muted-foreground text-xs md:text-sm mb-4">
           May 2024 – Aug 2024
         </p>
